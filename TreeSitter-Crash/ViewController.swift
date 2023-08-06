@@ -70,8 +70,9 @@ extension ViewController: NSTextStorageDelegate {
     }
 }
 
+//MARK: Async access - CRASH
 extension ViewController {
-    func node() async throws -> Node? {
+    func nodeAsync() async throws -> Node? {
         let currentTree = try await treeSitterClient.currentTree()
         let root = currentTree.rootNode!.firstChild!
         print(root.parent) // <- Does not crash here
@@ -80,12 +81,38 @@ extension ViewController {
 
     func getPath() {
         Task { @MainActor in
-            let node = try! await node()!
+            let node = try! await nodeAsync()!
             print(node.parent) // <- But crashes here
         }
     }
 
-    @IBAction func testButtonClicked(_ sender: Any) {
+    @IBAction func clickOnAsync(_ sender: Any) {
         getPath()
+    }
+}
+
+//MARK: Sync access - CRASH
+extension ViewController {
+    func nodeSync(completion: @escaping  (Node?) -> Void) {
+        var node: Node?
+        treeSitterClient.currentTree(completionHandler: { result in
+            switch result {
+            case .success(let tree):
+                node = tree.rootNode?.firstChild
+                print("Node ", node)
+                completion(node)
+            case .failure: fatalError()
+            }
+        })
+    }
+
+    func getPathSync() {
+        let node = nodeSync(completion: { node in
+            print(node?.parent)
+        })
+    }
+
+    @IBAction func syncButton(_ sender: Any) {
+        getPathSync()
     }
 }

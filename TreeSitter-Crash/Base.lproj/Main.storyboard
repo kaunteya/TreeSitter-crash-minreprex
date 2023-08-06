@@ -736,19 +736,31 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GEf-1q-q5b">
-                                <rect key="frame" x="2" y="232" width="117" height="32"/>
-                                <buttonCell key="cell" type="push" title="Click to crash" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qTd-6y-Cz9">
+                                <rect key="frame" x="2" y="232" width="129" height="32"/>
+                                <buttonCell key="cell" type="push" title="Async (CRASH)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qTd-6y-Cz9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="testButtonClicked:" target="XfG-lQ-9wD" id="PTZ-xU-11b"/>
+                                    <action selector="clickOnAsync:" target="XfG-lQ-9wD" id="PTZ-xU-11b"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="clz-qr-SKY">
+                                <rect key="frame" x="161" y="232" width="64" height="32"/>
+                                <buttonCell key="cell" type="push" title="Sync" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FnL-EM-gle">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="syncButton:" target="XfG-lQ-9wD" id="Ouu-Yd-j6B"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="clz-qr-SKY" firstAttribute="firstBaseline" secondItem="GEf-1q-q5b" secondAttribute="firstBaseline" id="NAj-ct-k7r"/>
                             <constraint firstItem="oKv-yv-JYG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="Ph4-jX-c3c"/>
                             <constraint firstItem="oKv-yv-JYG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="fiE-kL-M70"/>
+                            <constraint firstItem="clz-qr-SKY" firstAttribute="leading" secondItem="GEf-1q-q5b" secondAttribute="trailing" constant="44" id="ih7-BO-gmg"/>
                             <constraint firstItem="GEf-1q-q5b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="9" id="n1t-Jr-OdW"/>
                             <constraint firstAttribute="trailing" secondItem="oKv-yv-JYG" secondAttribute="trailing" id="tI6-Y0-iGs"/>
                             <constraint firstItem="GEf-1q-q5b" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="11" id="wlb-DO-YrX"/>
