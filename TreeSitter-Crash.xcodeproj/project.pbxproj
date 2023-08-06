@@ -11,6 +11,9 @@
 		E32C8C912A8009B400F8C2A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C8C902A8009B400F8C2A0 /* ViewController.swift */; };
 		E32C8C932A8009B500F8C2A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32C8C922A8009B500F8C2A0 /* Assets.xcassets */; };
 		E32C8C962A8009B500F8C2A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32C8C942A8009B500F8C2A0 /* Main.storyboard */; };
+		E32C8C9F2A8009F000F8C2A0 /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = E32C8C9E2A8009F000F8C2A0 /* Neon */; };
+		E32C8CA22A8009F900F8C2A0 /* TreeSitterJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E32C8CA12A8009F900F8C2A0 /* TreeSitterJSON */; };
+		E32C8CA62A800B7D00F8C2A0 /* highlights.scm in Resources */ = {isa = PBXBuildFile; fileRef = E32C8CA52A800B7D00F8C2A0 /* highlights.scm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		E32C8C922A8009B500F8C2A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E32C8C952A8009B500F8C2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E32C8C972A8009B500F8C2A0 /* TreeSitter_Crash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreeSitter_Crash.entitlements; sourceTree = "<group>"; };
+		E32C8CA52A800B7D00F8C2A0 /* highlights.scm */ = {isa = PBXFileReference; lastKnownFileType = text; path = highlights.scm; sourceTree = "<group>"; };
+		E32C8CA72A800CAC00F8C2A0 /* Basic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Basic.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32C8C9F2A8009F000F8C2A0 /* Neon in Frameworks */,
+				E32C8CA22A8009F900F8C2A0 /* TreeSitterJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,8 @@
 			children = (
 				E32C8C8E2A8009B400F8C2A0 /* AppDelegate.swift */,
 				E32C8C902A8009B400F8C2A0 /* ViewController.swift */,
+				E32C8CA72A800CAC00F8C2A0 /* Basic.json */,
+				E32C8CA52A800B7D00F8C2A0 /* highlights.scm */,
 				E32C8C922A8009B500F8C2A0 /* Assets.xcassets */,
 				E32C8C942A8009B500F8C2A0 /* Main.storyboard */,
 				E32C8C972A8009B500F8C2A0 /* TreeSitter_Crash.entitlements */,
@@ -77,6 +86,10 @@
 			dependencies = (
 			);
 			name = "TreeSitter-Crash";
+			packageProductDependencies = (
+				E32C8C9E2A8009F000F8C2A0 /* Neon */,
+				E32C8CA12A8009F900F8C2A0 /* TreeSitterJSON */,
+			);
 			productName = "TreeSitter-Crash";
 			productReference = E32C8C8B2A8009B400F8C2A0 /* TreeSitter-Crash.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +118,10 @@
 				Base,
 			);
 			mainGroup = E32C8C822A8009B400F8C2A0;
+			packageReferences = (
+				E32C8C9D2A8009F000F8C2A0 /* XCRemoteSwiftPackageReference "Neon" */,
+				E32C8CA02A8009F900F8C2A0 /* XCRemoteSwiftPackageReference "tree-sitter-json" */,
+			);
 			productRefGroup = E32C8C8C2A8009B400F8C2A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +138,7 @@
 			files = (
 				E32C8C932A8009B500F8C2A0 /* Assets.xcassets in Resources */,
 				E32C8C962A8009B500F8C2A0 /* Main.storyboard in Resources */,
+				E32C8CA62A800B7D00F8C2A0 /* highlights.scm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +357,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E32C8C9D2A8009F000F8C2A0 /* XCRemoteSwiftPackageReference "Neon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChimeHQ/Neon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
+		E32C8CA02A8009F900F8C2A0 /* XCRemoteSwiftPackageReference "tree-sitter-json" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tree-sitter/tree-sitter-json";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E32C8C9E2A8009F000F8C2A0 /* Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E32C8C9D2A8009F000F8C2A0 /* XCRemoteSwiftPackageReference "Neon" */;
+			productName = Neon;
+		};
+		E32C8CA12A8009F900F8C2A0 /* TreeSitterJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E32C8CA02A8009F900F8C2A0 /* XCRemoteSwiftPackageReference "tree-sitter-json" */;
+			productName = TreeSitterJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E32C8C832A8009B400F8C2A0 /* Project object */;
 }

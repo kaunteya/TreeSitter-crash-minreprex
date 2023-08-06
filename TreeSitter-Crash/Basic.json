@@ -1,0 +1,20 @@
+{
+    "basic": true,
+    "lucky_numbers": [
+        23454332,
+        54.12
+    ],
+    "name": {
+        "first": "Steve",
+        "last": "Jobs",
+        "profile": "https://google.com"
+    },
+    "value": null,
+    "percent": 84.34,
+    "text-color": "#e84118",
+    "phone": [
+        "+91 94920423",
+        "2354343423"
+    ],
+    "emo": "📖"
+}
