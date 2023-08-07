@@ -70,7 +70,7 @@ extension ViewController: NSTextStorageDelegate {
     }
 }
 
-//MARK: Async access - CRASH
+//MARK: Async access
 extension ViewController {
     func nodeAsync() async throws -> Node? {
         let currentTree = try await treeSitterClient.currentTree()
@@ -91,7 +91,7 @@ extension ViewController {
     }
 }
 
-//MARK: Sync access - CRASH
+//MARK: Sync access
 extension ViewController {
     func nodeSync(completion: @escaping  (Node?) -> Void) {
         var node: Node?
